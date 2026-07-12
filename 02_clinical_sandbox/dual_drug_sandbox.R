@@ -52,4 +52,7 @@ ggplot(
   scale_color_brewer(palette = "Set1") + 
   theme_classic(base_size = 12)
 
+#Saving Plot(NOTE: Do not attach ggsave to another function)   
+ggsave(filename = "dual_drug.png", path = here("04_plots")) 
+
 

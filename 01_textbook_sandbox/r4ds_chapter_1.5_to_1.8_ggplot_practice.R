@@ -85,14 +85,16 @@ ggplot(penguins, aes(x = island, fill = species)) +
 # 1.6 Examples ------------------------------------------------------------
 
 ggplot(penguins, aes(x = flipper_length_mm, y =  body_mass_g)) +
-  geom_point() +
+  geom_point() 
+#
   ggsave(filename = "penguin-plot.png")
 
 # 1.6 Exercises
 ggplot(mpg, aes(x = class)) +
   geom_bar() 
 ggplot(mpg, aes(x = cty, y = hwy)) +
-  geom_point() +
-  ggsave("mpg-plot.png")
+  geom_point()
+#
+ ggsave(here("04_plots","mpg-plot.png"))
   
   
