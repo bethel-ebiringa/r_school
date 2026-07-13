@@ -106,7 +106,7 @@ ggplot(diamonds) +
 #Stat_summary geom form
 ggplot(diamonds, aes(x = cut, y = depth)) +
   geom_pointrange(aes(
-    ymin = depth - se.depth
+    ymin = depth - se.depth,
     ymax = depth + se.depth
   ))
 

@@ -2,18 +2,18 @@
 # 7/2/2026: Chapter 2- Workflow Basics ------------------------------------
 
 
-#This code creates a stored vector to the name
+# This code creates a stored vector to the name
 Name <- c(1,2,3,4,5)
 
-#This code creates a sequence from the first argument to the second one
+# <- This code creates a sequence from the first argument to the second one
 seq(from = 1, to = 10)
 seq(1,10)
 
 
 # #7/3/2026: Here Experiments ---------------------------------------------
 
-#This code determines the location of a file under a directory
-#here("sub-directory",...,"file.type")
+# This code determines the location of a file under a directory
+here("sub-directory",...,"file.type")
 
 
 # 7/5/2026 ggplot2 --------------------------------------------------------
@@ -23,33 +23,33 @@ ggplot(
   data = data_name, mapping = aes(x = x_value, y = y_value)
 )
 
-#these functions plot data on a graph 
+# these functions plot data on a graph 
   geom_line()/ geom_bar()/ geom_plot()
 
-#this function plots a linear model line of best fit
+# this function plots a linear model line of best fit
   geom_smooth(method = "lm")
 
-#Used to edit the Labels of a graph
+# Used to edit the Labels of a graph
   labs(
   title= "Title",
   subtitle = "Subtitle",
   x = "X_axis_name",
   y = "Y_axis_name" )
 
-#Used to make colors colorblind friendly (ggthemes function)
+# Used to make colors colorblind friendly (ggthemes function)
  scale_color_colorblind()
 
 #allows for graphs from new files to be loaded
 while (!is.null(dev.list())) dev.off()
 
-#Displays different aspects of data
+# Displays different aspects of data
 View(data)
 
-#Gives a brief view of variables of a data set (in Console)
+# Gives a brief view of variables of a data set (in Console)
 glimpse(data)
 
-#This makes a new graph with no missing data for bill lengths and three columns
-#for island, species and the newly created column average bill length
+# This makes a new graph with no missing data for bill lengths and three columns
+# for island, species and the newly created column average bill length
 bill_length_data <- penguins |>
   drop_na(bill_length_mm) |>
   group_by(island, species) |>
@@ -57,7 +57,7 @@ bill_length_data <- penguins |>
     average_bill_length = mean(bill_length_mm)
   )
 
-#This separates the bar graph with multiple colors by the color variable
+# This separates the bar graph with multiple colors by the color variable
 geom_col(
   aes(fill = species), 
   position = "dodge"
@@ -75,11 +75,11 @@ write.csv(cars, here("data", "test_cars_data.csv"), row.names = FALSE)
 
 # 7/6/2026 Chapter 1.3 to 1.4 -----------------------------------------------
 
-#Histogram that has an altered binwidth
+# Histogram that has an altered binwidth
 ggplot(penguins, aes(x = body_mass_g)) + 
   geom_histogram(binwidth = 200)
 
-#Bins argument for geom_histogram that changes bin count
+# Bins argument for geom_histogram that changes bin count
 ggplot(penguins, aes(x = bill_length_mm)) +
   geom_histogram(bins = 20)
 
@@ -90,16 +90,16 @@ binned_data <- Theoph |>
 
 # 7/7/2026 Chapter 1.5 to 1.8 ---------------------------------------------
 
-#Bar Graph by proportion
+# Bar Graph by proportion
 ggplot(penguins, aes(x = island, fill = species)) +
   geom_bar(position = "fill")
 
-#Optimized Four variable scatter plot
+# Optimized Four variable scatter plot
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point(aes(color = species, shape = species)) +
   facet_wrap(~island)
 
-#Saving a graph
+# Saving a graph
 ggplot(penguins, aes(x = flipper_length_mm, y =  body_mass_g)) +
   geom_point() +
   ggsave(filename = "penguin-plot.png")
@@ -107,7 +107,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y =  body_mass_g)) +
 
 # 7/8/2026 Chapter 7.1 to 7.2 ---------------------------------------------
 
-#Pie Chart
+# Pie Chart
 ggplot(students, aes(x = " ", fill = meal_plan)) +
   geom_bar(width = 1, stat = "count") +
   coord_polar(theta = "y") +
@@ -117,7 +117,7 @@ ggplot(students, aes(x = " ", fill = meal_plan)) +
 
 # 7/9/2026 Chapter 7.3 to 7.7 ---------------------------------------------
 
-#combining different files into one data frame
+# combining different files into one data frame
 total_sales <- read_csv(
   c(
     here("data", "01_sales.csv"),
@@ -127,7 +127,7 @@ total_sales <- read_csv(
   id = "file"
 )
 
-#Reading all files in data folder ending with sales
+# Reading all files in data folder ending with sales
 read_csv(
   list.files(
     here("data"), 
@@ -139,7 +139,7 @@ read_csv(
 students_2 <- students |>
   select(-full_name, -student_id)
 
-#Ordering a data frame by levels
+# Ordering a data frame by levels
 cleaned_message_data <- read_message_data |>
   drop_na(RECORD_DATE) |>
   mutate(
@@ -152,13 +152,13 @@ cleaned_message_data <- read_message_data |>
 
 # 7/10/2026 Chapter 9.4 to ------------------------------------------------
 
-#Facet grid
+# Facet grid
 ggplot(mpg, aes(x = displ, y = hwy)) +
   geom_point() +
   facet_grid(drv ~ cyl)
   # facet_grid(row ~ col)
 
-#Proportional bar graph (naming experiment)
+# Proportional bar graph (naming experiment)
 ggplot(diamonds, aes(x = cut, y = after_stat(prop), group = 1)) +
   geom_bar() +
   scale_y_continuous(
@@ -166,7 +166,7 @@ ggplot(diamonds, aes(x = cut, y = after_stat(prop), group = 1)) +
     breaks = seq(0, 1, by = .2)
   )
 
-#New value experiment
+# New value experiment
 diamonds_new <- diamonds |>
   mutate(price_tier = case_when(
     price < 1000 ~ "Budget",
@@ -179,7 +179,7 @@ diamonds_new <- diamonds |>
   )) |>
   arrange(price_tier)
 
-#stat_summary graph
+# stat_summary graph
 ggplot(diamonds) +
   stat_summary(
     aes(x = cut, y = depth), 
@@ -188,9 +188,12 @@ ggplot(diamonds) +
     fun = median
   )
 
-#Stat_summary geom form
+# Stat_summary geom form
 ggplot(diamonds, aes(x = cut, y = depth)) +
   geom_pointrange(aes(
     ymin = depth - se.depth,
     ymax = depth + se.depth
   ))
+
+# Flushes active security token cache
+gitcreds::gitcreds_cache_clean()
