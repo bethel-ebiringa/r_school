@@ -150,7 +150,7 @@ cleaned_message_data <- read_message_data |>
   ) |>
   arrange(ADVERSE_EVENT)
 
-# 7/10/2026 Chapter 9.4 to ------------------------------------------------
+# 7/10/2026 Chapter 9.4 to 9.5 ------------------------------------------------
 
 # Facet grid
 ggplot(mpg, aes(x = displ, y = hwy)) +
