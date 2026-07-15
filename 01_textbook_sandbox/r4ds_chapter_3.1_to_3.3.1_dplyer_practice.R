@@ -1,6 +1,6 @@
 # ==============================================================================
-# SCRIPT MODULE: R4DS Chapter 3 Exercises and Examples
-# OBJECTIVE:     1-sentence explanation of what you are calculating or plotting
+# SCRIPT MODULE: R4DS Chapter 3.1 to 3.3.1 Exercises and Examples
+# OBJECTIVE:     Practice Data Cleaning Techniques
 # WORKSPACE REF: r_school / 01_textbook_sandbox 
 #                         / r4ds_chapter_3.1_to_3.3_dplyer_practice.R
 # DEPENDENCIES:  tidyverse, here, nycflights13

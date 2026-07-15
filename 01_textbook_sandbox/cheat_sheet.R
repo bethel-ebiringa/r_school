@@ -222,3 +222,31 @@ flights |>
 # Ordering a bar graph with preset values by frequency
 ggplot(many_penguins_beaks, aes(x = fct_reorder(genus, beak_ratio), y = beak_ratio)) +
   geom_col(aes(fill = sex), position = "dodge")
+
+
+# 7/15/2026 Chapter 3.3.2 - 3.5.3  ----------------------------------------
+
+# Selecting column names between variables
+flights |>
+  select(year:day)
+
+# Select column names except between variables
+flights |>
+  select(!year:day)
+
+# Select column names for certain column types
+flights |>
+  select(where(is.character))
+
+# Select helper functions
+#   starts_with("abc")
+#   ends_with("xyz")
+#   contains("ijk")
+#   num_range("x", 1:3)
+
+# Slice_ functions
+#   df |> slice_head(n = 1)
+#   df |> slice_tail(n = 1)
+#   df |> slice_min(x, n = 1)
+#   df |> slice_max(x, n = 1)
+#   df |> slice_sample(n = 1)
