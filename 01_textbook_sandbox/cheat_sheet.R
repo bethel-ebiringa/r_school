@@ -197,3 +197,28 @@ ggplot(diamonds, aes(x = cut, y = depth)) +
 
 # Flushes active security token cache
 gitcreds::gitcreds_cache_clean()
+
+
+# 7/13/2026 Sandbox -------------------------------------------------------
+
+# Gives levels of a factor variable
+levels(data_frame$variable_name)
+
+
+# 7/14/2026 Chapters 3.1 to 3.3.1 /Sandbox --------------------------------
+
+# Orders a graph by descending order
+flights |>
+  arrange(desc(dep_delay))
+
+# distinct function (2)
+flights |>
+  distinct(origin, dest, .keep_all = TRUE)
+
+#distinct function (3)
+flights |>
+  count(origin, dest, sort = TRUE)
+
+# Ordering a bar graph with preset values by frequency
+ggplot(many_penguins_beaks, aes(x = fct_reorder(genus, beak_ratio), y = beak_ratio)) +
+  geom_col(aes(fill = sex), position = "dodge")
