@@ -66,3 +66,40 @@ ggplot(
   
 # Saved second graph
 ggsave(here("04_plots", "penguin_limbs.png"))
+
+
+# ==============================================================================
+# SESSION PART 2: Continuation of Many Penguins TidyTuesday Exercise
+# Objective: Find More Connections Between the Variables in the Data
+# ==============================================================================
+
+
+# Dropped unknown sex observations to observe trends between sexes of penguins
+many_penguins_beaks2 <- many_penguins |> 
+  mutate(
+    sex = if_else(sex == "U", NA, sex),
+    beak_ratio = beak.length_culmen / beak.width) |> 
+  drop_na(sex) |> 
+  relocate(beak_ratio, .before = beak.length_culmen)
+  
+# Plotted new variable to test for any correlation with it and penguin beak 
+# length
+ggplot(
+  many_penguins_beaks2,
+  aes(x = beak.length_culmen, y = beak_ratio, color = sex)
+) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_color_manual(
+    values = c("pink", "lightblue"),
+    labels = c("F" = "Female","M" = "Male")
+  ) +
+  theme_classic() +
+  labs(
+    x = "Beak Length (mm)",
+    y = "Beak Ratio (Length / Width)",
+    color = "Sex",
+    title = "Penguin Beak Length vs Ratio of Beak Length over Width"
+  )
+  
+
