@@ -101,5 +101,7 @@ ggplot(
     color = "Sex",
     title = "Penguin Beak Length vs Ratio of Beak Length over Width"
   )
-  
+ 
+# Saved third plot
+ggsave(here("04_plots", "penguin_beak_ratio_2.png"))
 
