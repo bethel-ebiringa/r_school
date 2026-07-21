@@ -250,3 +250,9 @@ flights |>
 #   df |> slice_min(x, n = 1)
 #   df |> slice_max(x, n = 1)
 #   df |> slice_sample(n = 1)
+
+
+# 7/21/2026 nhanesA  2015 Demographics Sandbox ----------------------------
+# This code rotates and wraps the text
+theme(axis.text.x = element_text(angle = 90, vjust = .35)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 15))
