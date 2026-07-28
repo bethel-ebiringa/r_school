@@ -1,16 +1,16 @@
 # Quantitative Pharmacology & Pharmacometrics Coding Journey
 
-This private repository contains all the work that I've done in order to prepare myself for graduate school level coding and aspirations of a pharmacometrics career. 
+This repository shows my progress in becoming proficient in R for data analysis and visualization to prepare myself for a pharmacometrics career. The resources *R for Data Science (2e)* and *Hands-On Programming with R* were used to learn the skills shown in this portfolio. 
 
 ## 🗂️ Workspace Architecture
 
-*   **`01_textbook_sandbox/`**: Holds exercises, examples, and experimental code originating from *R for Data Science (2e)*, * Hands-On Programming with R* and *Introduction to Modern Statistics*.
-*   **`02_clinical_sandbox/`**: Contains code processing clinical data, pharmacokinetic time-concentration matrices (`Theoph`) and demographic covariate analysis.
-*   **`03_tidytuesday/`**: Tracks code responding to the *tidytuesday* data challenges that require creativity and critical thinking, using textbook fundamentals to clean and plot unorthodox data.
+*   **`01_textbook_sandbox/`**: Holds exercises, examples, and experimental code on data importing, cleaning, transformation, and visualization.
+*   **`02_clinical_sandbox/`**: Contains code that applies skills learned in `01_textbook_sandbox/` to clinical data from the base R `datasets` and `nhanesA` packages.
+*   **`03_tidytuesday/`**: Tracks code responding to the *tidytuesday* data challenges that require applying the skills practiced in `01_textbook_sandbox/` to find trends in real-world data.
 *   **`04_plots/`**: Stores polished `ggplot2` graphs and figures.
-*   **`data/`**: Where the raw `.csv` and binary `.rds` data frames are kept.
+*   **`data/`**: Stores the raw `.csv` and serialized `.rds` datasets.
 
-## ⚙️ Environment Specifications
-*   **Language**: R Engine 
-*   **Interface**: RStudio Desktop IDE
-*   **Portability Link**: Managed by RStudio Projects (`.Rproj`) and the `here` package ecosystem.
+## ⚙️ Core Packages
+*   `tidyverse`
+*   `here`
+*   `nhanesA`
